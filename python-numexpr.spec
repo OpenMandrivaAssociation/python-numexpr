@@ -28,11 +28,11 @@ compiler, i.e. it does not require a compiler at runtime.
 %setup -q -n %{module}-%{version}
 
 %build
-%__python setup.py build
+PYTHONDONTWRITEBYTECODE= %__python setup.py build
 
 %install
 %__rm -rf %{buildroot}
-%__python setup.py install --root=%{buildroot} --record=FILE_LIST
+PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record=FILE_LIST
 
 %clean
 %__rm -rf %{buildroot}
