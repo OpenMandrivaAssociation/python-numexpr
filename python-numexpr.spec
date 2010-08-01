@@ -1,6 +1,6 @@
 %define	module	numexpr
 %define name	python-%{module}
-%define version	1.3.1
+%define version	1.4
 %define release	%mkrel 1
 
 Summary: 	Fast numerical array expression evaluator for Python and NumPy
