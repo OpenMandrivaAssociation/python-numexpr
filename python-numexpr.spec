@@ -1,7 +1,7 @@
 %define	module	numexpr
 %define name	python-%{module}
 %define version	1.4.1
-%define release	%mkrel 1
+%define release	%mkrel 2
 
 Summary: 	Fast numerical array expression evaluator for Python and NumPy
 Name:		%{name}
@@ -12,9 +12,10 @@ License:	MIT
 Group:		Development/Python
 Url:		http://numexpr.googlecode.com/
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires:	python-numpy >= 1.0
+BuildRequires:	python-devel
 BuildRequires:	python-numpy-devel >= 1.0
-%py_requires -d 
+Requires:	python-numpy >= 1.0
+
 
 %description
 The numexpr package evaluates multiple-operator array expressions many
