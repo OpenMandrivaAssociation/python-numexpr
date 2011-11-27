@@ -1,21 +1,20 @@
 %define	module	numexpr
 %define name	python-%{module}
-%define version	1.4.2
-%define release	%mkrel 2
+%define version	2.0
+%define release	%mkrel 1
 
 Summary: 	Fast numerical array expression evaluator for Python and NumPy
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}
 Source0:	http://numexpr.googlecode.com/files/%{module}-%{version}.tar.gz
-Patch0:		setup-lm.patch
 License:	MIT
 Group:		Development/Python
 Url:		http://numexpr.googlecode.com/
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	python-devel
-BuildRequires:	python-numpy-devel >= 1.0
-Requires:	python-numpy >= 1.0
+BuildRequires:	python-numpy-devel >= 1.6
+Requires:	python-numpy >= 1.6
 
 %description
 The numexpr package evaluates multiple-operator array expressions many
@@ -27,7 +26,6 @@ compiler, i.e. it does not require a compiler at runtime.
 
 %prep
 %setup -q -n %{module}-%{version}
-%patch0 -p0 
 
 %build
 PYTHONDONTWRITEBYTECODE= %__python setup.py build
