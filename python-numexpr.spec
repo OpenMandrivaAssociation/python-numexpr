@@ -2,9 +2,9 @@
 
 Summary: 	Fast numerical array expression evaluator for Python and NumPy
 Name:		python-%{module}
-Version:	2.0.1
-Release:	2
-Source0:	http://numexpr.googlecode.com/files/%{module}-%{version}.tar.gz
+Version:	2.2.2
+Release:	1
+Source0:	http://numexpr.googlecode.com/files/numexpr-%{version}.tar.gz
 License:	MIT
 Group:		Development/Python
 Url:		http://numexpr.googlecode.com/
@@ -64,4 +64,5 @@ PYTHONDONTWRITEBYTECODE= %__python setup.py install --root=%{buildroot} --record
 * Tue Jul 13 2010 Lev Givon <lev@mandriva.org> 1.3.1-1mdv2011.0
 + Revision: 551335
 - import python-numexpr
+
 
