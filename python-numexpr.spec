@@ -10,10 +10,12 @@ License:	MIT
 Group:		Development/Python
 Url:		http://numexpr.googlecode.com/
 BuildRequires:	python-devel
+BuildRequires:	python-numpy
 BuildRequires:	python-numpy-devel >= 1.6
 BuildRequires:	pkgconfig(lapack)
 BuildRequires:  pkgconfig(python3)
 BuildRequires:  python3-numpy
+BuildRequires:  python3-numpy-devel
 BuildRequires:  python-six
 BuildRequires:  python3-six
 Requires:	python-numpy >= 1.6
