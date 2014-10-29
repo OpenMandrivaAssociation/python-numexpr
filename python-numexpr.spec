@@ -36,7 +36,7 @@ PYTHONDONTWRITEBYTECODE= python setup.py build
 PYTHONDONTWRITEBYTECODE= python setup.py install --root=%{buildroot}
 
 %files
-%doc ANNOUNCE.txt LICENSE.txt RELEASE_NOTES.txt README.txt
+%doc LICENSE.txt
 %dir %{py_platsitedir}/%{module}
 %{py_platsitedir}/%{module}/*
 %{py_platsitedir}/%{module}-*.egg-info
