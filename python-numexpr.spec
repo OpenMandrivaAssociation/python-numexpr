@@ -3,9 +3,9 @@
 
 Summary: 	Fast numerical array expression evaluator for Python and NumPy
 Name:		python-%{module}
-Version:	2.2.2
-Release:	4
-Source0:	http://numexpr.googlecode.com/files/%{module}-%{version}.tar.gz
+Version:	2.4
+Release:	1
+Source0:	https://pypi.python.org/packages/source/n/numexpr/numexpr-%{version}.tar.gz
 License:	MIT
 Group:		Development/Python
 Url:		http://numexpr.googlecode.com/

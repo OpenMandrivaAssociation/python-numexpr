@@ -1,4 +1,5 @@
 removed_sources:
   numexpr-2.0.1.tar.gz: 71121246f550290d98e23e93a3ebe140c01aea2a
-sources:
   numexpr-2.2.2.tar.gz: 021cbd31e6976164b4b956318b30630dabd16159
+sources:
+  numexpr-2.4.tar.gz: c3aeb160caae1b97ac1914fa6e9cf628a7fc9c8a
