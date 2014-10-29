@@ -27,7 +27,7 @@ compiler, i.e. it does not require a compiler at runtime.
 
 %prep
 %setup -qn %{module}-%{version}
-sed -i "s|/usr/bin/env |/usr/bin/|" %{module}-%{version}/%{module}/cpuinfo.py
+sed -i "s|/usr/bin/env |/usr/bin/|" %{module}/cpuinfo.py
 
 %build
 PYTHONDONTWRITEBYTECODE= python setup.py build
