@@ -1,0 +1,2 @@
+# false positive
+addFilter("W: devel-file-in-non-devel-package")

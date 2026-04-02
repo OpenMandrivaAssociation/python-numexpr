@@ -1,20 +1,21 @@
-%define	module	numexpr
-%define __noautoprov '.*\\.so'
+%define module numexpr
 
+Name:		python-numexpr
 Summary: 	Fast numerical array expression evaluator for Python and NumPy
-Name:		python-%{module}
-Version:	2.7.1
+Version:	2.14.1
 Release:	1
-Source0:	https://files.pythonhosted.org/packages/82/a0/42e0f42d79e0db81e78424828dee1aea08a06da66c2bc06068742e9b860f/numexpr-%{version}.tar.gz
 License:	MIT
 Group:		Development/Python
-Url:		https://numexpr.googlecode.com/
-BuildRequires:	python-devel
-BuildRequires:	python-numpy
-BuildRequires:	python-numpy-devel >= 1.6
-BuildRequires:	pkgconfig(lapack)
-BuildRequires:  python-six
-Requires:	python-numpy >= 1.6
+URL:		https://github.com/pydata/numexpr
+Source0:	%{URL}/archive/v%{version}/%{name}-%{version}.tar.gz
+Source100:	%{name}.rpmlintrc
+
+BuildSystem:	python
+BuildRequires:	pkgconfig(python3)
+BuildRequires:	python%{pyver}dist(numpy)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(wheel)
 
 %description
 The numexpr package evaluates multiple-operator array expressions many
@@ -24,21 +25,11 @@ Python code on the fly. It's the next best thing to writing the
 expression in C and compiling it with a specialized just-in-time (JIT)
 compiler, i.e. it does not require a compiler at runtime.
 
-
-%prep
-%setup -qn %{module}-%{version}
-sed -i "s|/usr/bin/env |/usr/bin/|" %{module}/cpuinfo.py
-
-%build
-PYTHONDONTWRITEBYTECODE= python setup.py build
-
-%install
-PYTHONDONTWRITEBYTECODE= python setup.py install --root=%{buildroot}
+%build -p
+export LDFLAGS="%{ldflags} -lpython%{pyver}"
 
 %files
-%doc LICENSE.txt
-%dir %{py_platsitedir}/%{module}
-%{py_platsitedir}/%{module}/*
-%{py_platsitedir}/%{module}-*.egg-info
-
-
+%doc README.rst site.cfg.example
+%license LICENSE.txt
+%{python_sitearch}/%{module}
+%{python_sitearch}/%{module}-%{version}.dist-info
