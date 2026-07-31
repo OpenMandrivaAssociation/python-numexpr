@@ -2,7 +2,7 @@
 
 Name:		python-numexpr
 Summary: 	Fast numerical array expression evaluator for Python and NumPy
-Version:	2.14.1
+Version:	2.14.2
 Release:	1
 License:	MIT
 Group:		Development/Python
