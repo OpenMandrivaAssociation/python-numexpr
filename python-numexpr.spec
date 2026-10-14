@@ -3,12 +3,11 @@
 Name:		python-numexpr
 Summary: 	Fast numerical array expression evaluator for Python and NumPy
 Version:	2.14.2
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Python
 URL:		https://github.com/pydata/numexpr
 Source0:	%{URL}/archive/v%{version}/%{name}-%{version}.tar.gz
-Source100:	%{name}.rpmlintrc
 
 BuildSystem:	python
 BuildRequires:	pkgconfig(python3)
